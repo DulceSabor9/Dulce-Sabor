@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dulce Sabor | Panadería</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: white;
+            color: #333;
+        }
+
+        .contenedor {
+            width: 900px;
+            max-width: 92%;
+            margin: auto;
+        }
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            background: white;
+            padding: 8px 0 12px;
+        }
+
+        .encabezado {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* ESPACIO PARA EL LOGO */
+
+        .logo {
+            width: 58px;
+            height: 58px;
+            border: 1px dashed #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .marca h1 {
+            font-size: 34px;
+            color: #111;
+            line-height: 1;
+        }
+
+        .marca p {
+            font-size: 12px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        /* =========================
+           MENÚ DE NAVEGACIÓN
+        ========================= */
+
+        nav {
+            background: #0875ad;
+            padding: 9px 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 4px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 10px;
+            display: block;
+        }
+
+        nav a:hover {
+            background: #075d8b;
+        }
+
+        /* =========================
+           IMAGEN PRINCIPAL
+        ========================= */
+
+        .banner {
+            height: 245px;
+            margin-bottom: 18px;
+
+            border: 1px solid #ddd;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .espacio-banner {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #fafafa;
+
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* =========================
+           TRES CUADROS PRINCIPALES
+        ========================= */
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 15px;
+        }
+
+        .tarjeta {
+            border: 1px solid #d1d1d1;
+            background: white;
+
+            min-height: 365px;
+        }
+
+        /* ESPACIO PARA IMÁGENES */
+
+        .imagen-tarjeta {
+            height: 128px;
+
+            padding: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .espacio-imagen {
+            width: 100%;
+            height: 100%;
+
+            border: 1px dashed #ccc;
+
+            background: #fafafa;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 11px;
+        }
+
+        .contenido-tarjeta {
+            padding: 4px 15px 20px;
+
+            text-align: center;
+        }
+
+        .tarjeta h2 {
+            color: #2268a4;
+
+            font-size: 20px;
+
+            margin: 12px 0;
+        }
+
+        .tarjeta p {
+            font-size: 12px;
+
+            line-height: 1.48;
+
+            text-align: justify;
+
+            color: #444;
+        }
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 6px 17px;
+
+            border: 1px solid #1976bd;
+
+            color: #1976bd;
+
+            text-decoration: none;
+
+            font-size: 12px;
+        }
+
+        .boton:hover {
+            background: #1976bd;
+            color: white;
+        }
+
+        /* =========================
+           BREEF
+        ========================= */
+
+        .breef {
+            border: 1px solid #d1d1d1;
+
+            min-height: 300px;
+
+            padding: 14px 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .breef-cabecera {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 15px;
+        }
+
+        .breef h2 {
+            color: #2268a4;
+
+            font-size: 22px;
+        }
+
+        .breef h3 {
+            font-size: 15px;
+
+            color: #333;
+
+            margin-bottom: 8px;
+        }
+
+        .breef p {
+            font-size: 12px;
+
+            line-height: 1.55;
+
+            text-align: justify;
+        }
+
+        /* =========================
+           ESPACIOS PARA TUS IMÁGENES
+        ========================= */
+
+        .dos-imagenes {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+            margin-top: 22px;
+        }
+
+        .espacio-extra {
+            height: 150px;
+
+            border: 1px dashed #aaa;
+
+            background: #fafafa;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #888;
+
+            font-size: 12px;
+
+            text-align: center;
+        }
+
+        /* =========================
+           SECCIÓN MENÚ
+        ========================= */
+
+        .menu-seccion {
+            padding: 35px 0;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        .titulo-seccion h2 {
+            color: #2268a4;
+
+            font-size: 24px;
+        }
+
+        .titulo-seccion p {
+            color: #666;
+
+            font-size: 12px;
+
+            margin-top: 5px;
+        }
+
+        /* IMAGEN DEL MENÚ */
+
+        .imagen-menu {
+            width: 100%;
+
+            height: 270px;
+
+            border: 1px solid #d1d1d1;
+
+            background: #fafafa;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+        /* LISTA DEL MENÚ */
+
+        .lista-menu {
+            border: 1px solid #d1d1d1;
+
+            padding: 18px 25px;
+        }
+
+        .lista-menu h3 {
+            color: #2268a4;
+
+            font-size: 18px;
+
+            margin: 8px 0 12px;
+        }
+
+        .lista-menu ul {
+            padding-left: 22px;
+        }
+
+        .lista-menu li {
+            font-size: 13px;
+
+            margin: 7px 0;
+        }
+
+        /* =========================
+           ESPACIO PARA INFORMACIÓN
+        ========================= */
+
+        .mi-informacion {
+            margin-top: 25px;
+
+            border: 1px solid #d1d1d1;
+
+            min-height: 180px;
+
+            padding: 20px;
+        }
+
+        .mi-informacion h2 {
+            color: #2268a4;
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+        }
+
+        .espacio-texto {
+            border: 1px dashed #aaa;
+
+            min-height: 100px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #888;
+
+            font-size: 12px;
+
+            text-align: center;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            text-align: center;
+
+            padding: 35px 0;
+        }
+
+        .contacto h2 {
+            color: #2268a4;
+
+            font-size: 24px;
+
+            margin-bottom: 8px;
+        }
+
+        .contacto p {
+            color: #555;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px 0;
+
+            color: #777;
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .encabezado {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            .banner {
+                height: 210px;
+            }
+
+            .dos-imagenes {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     ENCABEZADO
+========================================= -->
+
+<header>
+
+    <div class="contenedor encabezado">
+
+
+        <div class="marca">
+
+
+            <!--
+                AQUÍ PUEDES PONER TU LOGO.
+
+                Ejemplo:
+
+                <img src="" class="logo">
+            -->
+
+            <div class="logo">
+
+                ESPACIO
+                PARA
+                LOGO
+
+            </div>
+
+
+            <div>
+
+                <h1>
+                    DULCE SABOR
+                </h1>
+
+
+                <p>
+                    tradición que inspira, sabor que enamora
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- MENÚ -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="#inicio">
+                        Inicio
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#historia">
+                        Nuestra Historia
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#menu">
+                        Nuestro Menú
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#breef">
+                        Breef
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#contacto">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<main class="contenedor">
+
+
+<!-- =========================================
+     IMAGEN PRINCIPAL
+========================================= -->
+
+<section
+    class="banner"
+    id="inicio"
+>
+
+
+    <!--
+        AQUÍ PUEDES PONER TU IMAGEN PRINCIPAL.
+
+        Ejemplo:
+
+        <img src="foto.jpg"
+             style="width:100%;height:100%;object-fit:cover;">
+    -->
+
+
+    <div class="espacio-banner">
+
+        ESPACIO PARA TU IMAGEN PRINCIPAL
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     TRES CUADROS
+========================================= -->
+
+<section class="tarjetas">
+
+
+
+<!-- NUESTRA HISTORIA -->
+
+<article
+    class="tarjeta"
+    id="historia"
+>
+
+
+    <div class="imagen-tarjeta">
+
+        <!-- ESPACIO PARA IMAGEN 1 -->
+
+        <div class="espacio-imagen">
+
+            ESPACIO PARA
+            IMAGEN 1
+
+        </div>
+
+    </div>
+
+
+
+    <div class="contenido-tarjeta">
+
+
+        <h2>
+            Nuestra Historia
+        </h2>
+
+
+        <p>
+
+            Dulce Sabor nació como una
+            panadería familiar en San Salvador,
+            con el propósito de ofrecer productos
+            artesanales que transmitan calidez y
+            sabor casero. La tradición de hornear
+            se combina con creatividad para dar a
+            cada cliente una experiencia dulce y cercana.
+
+        </p>
+
+
+        <a
+            href="#historia-completa"
+            class="boton"
+        >
+
+            Leer más
+
+        </a>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!-- NUESTRO MENÚ -->
+
+<article
+    class="tarjeta"
+>
+
+
+    <div class="imagen-tarjeta">
+
+        <!-- ESPACIO PARA IMAGEN DEL MENÚ -->
+
+        <div class="espacio-imagen">
+
+            ESPACIO PARA
+            IMAGEN DEL MENÚ
+
+        </div>
+
+    </div>
+
+
+
+    <div class="contenido-tarjeta">
+
+
+        <h2>
+            Nuestro Menú
+        </h2>
+
+
+        <p>
+
+            Conoce nuestros productos de
+            panadería, dulces y bebidas.
+            Aquí encontrarás las opciones
+            que ofrece Dulce Sabor.
+
+        </p>
+
+
+        <a
+            href="#menu"
+            class="boton"
+        >
+
+            Leer más
+
+        </a>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!-- BREEF -->
+
+<article
+    class="tarjeta"
+    id="breef"
+>
+
+
+    <div class="imagen-tarjeta">
+
+        <!-- ESPACIO PARA IMAGEN 2 -->
+
+        <div class="espacio-imagen">
+
+            ESPACIO PARA
+            IMAGEN 2
+
+        </div>
+
+    </div>
+
+
+
+    <div class="contenido-tarjeta">
+
+
+        <h2>
+            Breef
+        </h2>
+
+
+        <p>
+
+            Dulce Sabor Panadería se distingue
+            por mantener la esencia de lo artesanal
+            en cada producto y combinar tradición
+            y creatividad.
+
+        </p>
+
+
+        <a
+            href="#breef-completo"
+            class="boton"
+        >
+
+            Leer más
+
+        </a>
+
+
+    </div>
+
+
+</article>
+
+
+</section>
+
+
+
+<!-- =========================================
+     HISTORIA COMPLETA
+========================================= -->
+
+<section
+    class="breef"
+    id="historia-completa"
+>
+
+
+    <div class="breef-cabecera">
+
+
+        <div class="logo">
+
+            IMAGEN
+
+        </div>
+
+
+        <h2>
+            Nuestra Historia
+        </h2>
+
+
+    </div>
+
+
+    <p>
+
+        Dulce Sabor nació como una panadería
+        familiar en San Salvador, con el propósito
+        de ofrecer productos artesanales que
+        transmitan calidez y sabor casero.
+
+        La tradición de hornear se combina con
+        creatividad para dar a cada cliente una
+        experiencia dulce y cercana.
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =========================================
+     BREEF COMPLETO
+========================================= -->
+
+<section
+    class="breef"
+    id="breef-completo"
+>
+
+
+    <div class="breef-cabecera">
+
+
+        <div class="logo">
+
+            IMAGEN
+
+        </div>
+
+
+        <h2>
+            Breef
+        </h2>
+
+
+    </div>
+
+
+    <h3>
+        ¿QUÉ HACE ÚNICA LA MARCA?
+    </h3>
+
+
+    <p>
+
+        Dulce Sabor Panadería se distingue por
+        mantener la esencia de lo artesanal en
+        cada producto.
+
+        Lo que la hace única es la combinación
+        de tradición y creatividad: recetas
+        familiares que evocan el hogar, pero
+        con presentaciones modernas que atraen
+        a clientes jóvenes y actuales.
+
+        Además, su identidad visual, logo,
+        menú y estilo cálido refuerza la
+        experiencia cercana y acogedora que
+        no se encuentra en cualquier panadería.
+
+    </p>
+
+
+    <!-- ESPACIOS PARA OTRAS DOS IMÁGENES -->
+
+    <div class="dos-imagenes">
+
+
+        <div class="espacio-extra">
+
+            ESPACIO PARA
+            OTRA IMAGEN
+
+        </div>
+
+
+        <div class="espacio-extra">
+
+            ESPACIO PARA
+            OTRA IMAGEN
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     MENÚ COMPLETO
+========================================= -->
+
+<section
+    class="menu-seccion"
+    id="menu"
+>
+
+
+    <div class="titulo-seccion">
+
+
+        <h2>
+            Nuestro Menú
+        </h2>
+
+
+        <p>
+            Productos y bebidas de Dulce Sabor
+        </p>
+
+
+    </div>
+
+
+
+    <!--
+        AQUÍ VA LA IMAGEN DEL MENÚ
+
+        Puedes reemplazar el div por:
+
+        <img src="Menu.jpg"
+             style="width:100%;height:270px;object-fit:cover;">
+    -->
+
+
+    <div class="imagen-menu">
+
+        ESPACIO PARA
+        LA IMAGEN DEL MENÚ
+
+    </div>
+
+
+
+    <!-- LISTA DE PRODUCTOS -->
+
+    <div class="lista-menu">
+
+
+        <h3>
+            Cupcakes y Dulces
+        </h3>
+
+
+        <ul>
+
+            <li>
+                Pan francés
+            </li>
+
+            <li>
+                Donas
+            </li>
+
+            <li>
+                Conchas
+            </li>
+
+            <li>
+                Brownies
+            </li>
+
+            <li>
+                Galletas de chocolate
+            </li>
+
+        </ul>
+
+
+
+        <h3>
+            Bebidas
+        </h3>
+
+
+        <ul>
+
+            <li>
+                Agua
+            </li>
+
+            <li>
+                Té helado
+            </li>
+
+            <li>
+                Malteada de chocolate
+            </li>
+
+            <li>
+                Chocolate caliente
+            </li>
+
+            <li>
+                Café helado
+            </li>
+
+        </ul>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- =========================================
+     ESPACIO PARA TU INFORMACIÓN
+========================================= -->
+
+<section class="mi-informacion">
+
+
+    <h2>
+        Mi información
+    </h2>
+
+
+    <!--
+        AQUÍ PUEDES ESCRIBIR LO QUE TÚ QUIERAS.
+    -->
+
+
+    <div class="espacio-texto">
+
+        ESPACIO PARA QUE ESCRIBAS
+        TU PROPIA INFORMACIÓN
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACTO
+========================================= -->
+
+<section
+    class="contacto"
+    id="contacto"
+>
+
+
+    <h2>
+        Contacto
+    </h2>
+
+
+    <p>
+
+        Aquí puedes agregar tus datos,
+        redes sociales, dirección o
+        cualquier otra información.
+
+    </p>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+
+    ©
+    <span id="year"></span>
+
+    Dulce Sabor Panadería
+
+
+</footer>
+
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+
+</body>
+
+</html>
