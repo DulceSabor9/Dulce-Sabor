@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Dulce Sabor Panadería - tradición, creatividad y productos artesanales.">
+
+    <title>Dulce Sabor | Panadería</title>
+
+    <style>
+
+        /* ==============================
+           COLORES PRINCIPALES
+        ============================== */
+
+        :root {
+            --cafe: #5a250f;
+            --cafe-claro: #713018;
+            --anaranjado: #e9780b;
+            --anaranjado-claro: #f39a19;
+            --amarillo: #ffd84a;
+            --crema: #fff6d8;
+            --blanco: #fffdf7;
+            --texto: #3d2418;
+            --gris: #765d4d;
+            --sombra: 0 14px 35px rgba(90, 37, 15, 0.16);
+        }
+
+
+        /* ==============================
+           CONFIGURACIÓN GENERAL
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--texto);
+            background: var(--crema);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+
+        /* ==============================
+           BARRA DE NAVEGACIÓN
+        ============================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(90, 37, 15, 0.98);
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav {
+            min-height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: white;
+        }
+
+        .brand img {
+            width: 58px;
+            height: 58px;
+
+            object-fit: contain;
+        }
+
+        .brand strong {
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+
+            list-style: none;
+
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            color: #fff8e5;
+
+            padding: 9px 12px;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+            font-size: 0.92rem;
+
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: var(--anaranjado);
+        }
+
+        .menu-btn {
+            display: none;
+
+            background: none;
+            border: none;
+
+            color: white;
+
+            font-size: 1.8rem;
+
+            cursor: pointer;
+        }
+
+
+        /* ==============================
+           PORTADA / HERO
+        ============================== */
+
+        .hero {
+
+            min-height: 650px;
+
+            display: grid;
+            place-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 80% 15%,
+                    rgba(255, 216, 74, 0.85) 0 8%,
+                    transparent 9%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    var(--cafe) 0 58%,
+                    var(--anaranjado) 58% 100%
+                );
+        }
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            border: 2px solid rgba(255, 216, 74, 0.35);
+
+            border-radius: 50%;
+
+            right: -170px;
+            bottom: -220px;
+        }
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr
+                0.95fr;
+
+            gap: 45px;
+
+            align-items: center;
+        }
+
+        .hero-copy {
+            color: white;
+        }
+
+        .eyebrow {
+
+            display: inline-block;
+
+            background: var(--amarillo);
+
+            color: var(--cafe);
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.2px;
+
+            font-size: 0.78rem;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+
+            font-size: clamp(
+                3rem,
+                7vw,
+                5.9rem
+            );
+
+            line-height: 0.9;
+
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--amarillo);
+        }
+
+        .hero p {
+
+            font-size: 1.15rem;
+
+            max-width: 620px;
+
+            color: #fff6df;
+        }
+
+        .buttons {
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-top: 28px;
+        }
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 13px 21px;
+
+            border-radius: 28px;
+
+            font-weight: 800;
+
+            border: 2px solid var(--amarillo);
+
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+
+            background: var(--amarillo);
+
+            color: var(--cafe);
+        }
+
+        .btn-primary:hover {
+
+            transform: translateY(-2px);
+
+            filter: brightness(1.05);
+        }
+
+        .btn-outline {
+
+            color: white;
+        }
+
+        .btn-outline:hover {
+
+            background: white;
+
+            color: var(--cafe);
+        }
+
+        .hero-art {
+
+            position: relative;
+
+            min-height: 490px;
+
+            display: grid;
+
+            place-items: center;
+        }
+
+        .hero-art img {
+
+            width: min(430px, 90%);
+
+            filter:
+                drop-shadow(
+                    0 20px 20px rgba(0, 0, 0, 0.25)
+                );
+        }
+
+        .badge {
+
+            position: absolute;
+
+            bottom: 25px;
+            left: 5%;
+
+            background: white;
+
+            color: var(--cafe);
+
+            padding: 15px 20px;
+
+            border-radius: 18px;
+
+            box-shadow: var(--sombra);
+
+            font-weight: 800;
+        }
+
+
+        /* ==============================
+           SECCIONES
+        ============================== */
+
+        section {
+            padding: 88px 0;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title .tag {
+
+            color: var(--anaranjado);
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            font-size: 0.8rem;
+        }
+
+        .section-title h2 {
+
+            font-size: clamp(
+                2rem,
+                4vw,
+                3.2rem
+            );
+
+            color: var(--cafe);
+
+            margin: 7px 0;
+        }
+
+        .section-title p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color: var(--gris);
+        }
+
+
+        /* ==============================
+           NOSOTROS
+        ============================== */
+
+        .about {
+
+            background: var(--blanco);
+        }
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 40px;
+
+            align-items: center;
+        }
+
+        .about-card {
+
+            background: var(--crema);
+
+            border-radius: 28px;
+
+            padding: 34px;
+
+            box-shadow: var(--sombra);
+        }
+
+        .about-card h3 {
+
+            color: var(--cafe);
+
+            font-size: 1.55rem;
+
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+
+            margin-bottom: 15px;
+        }
+
+        .note {
+
+            margin-top: 18px;
+
+            padding: 14px 16px;
+
+            border-left:
+                5px solid var(--anaranjado);
+
+            background: #fff8e6;
+
+            border-radius: 8px;
+
+            color: var(--gris);
+
+            font-size: 0.95rem;
+        }
+
+        .visual img {
+
+            border-radius: 28px;
+
+            box-shadow: var(--sombra);
+
+            width: 100%;
+        }
+
+
+        /* ==============================
+           VALORES DE LA MARCA
+        ============================== */
+
+        .values {
+
+            background: var(--cafe);
+
+            color: white;
+        }
+
+        .values .section-title h2 {
+            color: white;
+        }
+
+        .values .section-title p {
+            color: #f6dfc9;
+        }
+
+        .value-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .value-card {
+
+            background: var(--cafe-claro);
+
+            border:
+                1px solid
+                rgba(255, 216, 74, 0.25);
+
+            padding: 28px;
+
+            border-radius: 22px;
+        }
+
+        .value-card .icon {
+
+            font-size: 2rem;
+
+            margin-bottom: 12px;
+        }
+
+        .value-card h3 {
+
+            color: var(--amarillo);
+
+            margin-bottom: 8px;
+        }
+
+        .value-card p {
+
+            color: #ffeede;
+        }
+
+
+        /* ==============================
+           PRODUCTOS
+        ============================== */
+
+        .products {
+
+            background: var(--crema);
+        }
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 28px;
+        }
+
+        .product-card {
+
+            background: white;
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow: var(--sombra);
+        }
+
+        .product-card img {
+
+            height: 410px;
+
+            width: 100%;
+
+            object-fit: cover;
+        }
+
+        .product-body {
+
+            padding: 24px;
+        }
+
+        .product-body h3 {
+
+            color: var(--cafe);
+
+            font-size: 1.5rem;
+
+            margin-bottom: 8px;
+        }
+
+        .product-body p {
+
+            color: var(--gris);
+        }
+
+        .price {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            background: var(--amarillo);
+
+            color: var(--cafe);
+
+            padding: 7px 12px;
+
+            border-radius: 18px;
+
+            font-weight: 900;
+        }
+
+        .no-price {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            color: var(--cafe);
+
+            font-weight: 800;
+        }
+
+
+        /* ==============================
+           SERVICIOS
+        ============================== */
+
+        .services {
+
+            background: var(--blanco);
+        }
+
+        .service-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .service {
+
+            padding: 28px;
+
+            border-radius: 22px;
+
+            background: white;
+
+            box-shadow: var(--sombra);
+
+            border-top:
+                6px solid
+                var(--anaranjado);
+        }
+
+        .service h3 {
+
+            color: var(--cafe);
+
+            margin-bottom: 8px;
+        }
+
+        .service p {
+
+            color: var(--gris);
+        }
+
+
+        /* ==============================
+           MENÚ
+        ============================== */
+
+        .menu-section {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff1b7,
+                    #fffdf7
+                );
+        }
+
+        .menu-box {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background: white;
+
+            border-radius: 28px;
+
+            padding: 35px;
+
+            box-shadow: var(--sombra);
+        }
+
+        .menu-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 18px 0;
+
+            border-bottom:
+                1px dashed
+                #d9ad79;
+
+            align-items: center;
+        }
+
+        .menu-row:last-child {
+            border-bottom: none;
+        }
+
+        .menu-row h3 {
+            color: var(--cafe);
+        }
+
+        .menu-row span {
+
+            color: var(--anaranjado);
+
+            font-weight: 900;
+        }
+
+        .menu-note {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: var(--gris);
+
+            font-size: 0.92rem;
+        }
+
+
+        /* ==============================
+           ORIGEN
+        ============================== */
+
+        .origin {
+
+            background: var(--cafe-claro);
+
+            color: white;
+        }
+
+        .origin .section-title h2 {
+            color: white;
+        }
+
+        .origin .section-title p {
+            color: #ffe9d8;
+        }
+
+        .origin-box {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border:
+                1px solid
+                rgba(255, 216, 74, 0.3);
+
+            padding: 36px;
+
+            border-radius: 26px;
+        }
+
+        .origin-box p {
+
+            font-size: 1.08rem;
+        }
+
+        .pending {
+
+            margin-top: 18px;
+
+            background:
+                rgba(255, 216, 74, 0.14);
+
+            border-radius: 14px;
+
+            padding: 14px;
+
+            color: #ffe7a1;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* ==============================
+           CONTACTO
+        ============================== */
+
+        .contact {
+
+            background: var(--anaranjado);
+        }
+
+        .contact-box {
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .contact-box h2 {
+
+            font-size:
+                clamp(
+                    2rem,
+                    4vw,
+                    3rem
+                );
+
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #fff7e5;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+
+            background: #3b180b;
+
+            color: #fbe6c8;
+
+            text-align: center;
+
+            padding: 28px 0;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* ==============================
+           DISEÑO RESPONSIVO
+        ============================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                left: 0;
+                right: 0;
+
+                top: 76px;
+
+                background: var(--cafe);
+
+                padding: 15px;
+
+                flex-direction: column;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+
+                min-height: auto;
+
+                padding: 75px 0;
+            }
+
+            .hero-grid,
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .hero-art {
+
+                min-height: 350px;
+            }
+
+            .value-grid,
+            .service-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            section {
+
+                padding: 65px 0;
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            .brand strong {
+                font-size: 1rem;
+            }
+
+            .brand img {
+
+                width: 48px;
+                height: 48px;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .product-card img {
+                height: 330px;
+            }
+
+            .menu-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         BARRA DE NAVEGACIÓN
+    ========================================== -->
+
+    <header>
+
+        <div class="container nav">
+
+            <a class="brand" href="#inicio">
+
+                <img
+                    src="Logo.p.jpg"
+                    alt="Logo de Dulce Sabor Panadería"
+                >
+
+                <strong>
+                    Dulce Sabor
+                </strong>
+
+            </a>
+
+
+            <button
+                class="menu-btn"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#inicio">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#nosotros">
+                        Nosotros
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#productos">
+                        Productos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#servicios">
+                        Servicios
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#menu">
+                        Menú
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#origen">
+                        Origen
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contacto">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             INICIO
+        ====================================== -->
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="container hero-grid">
+
+
+                <div class="hero-copy">
+
+                    <span class="eyebrow">
+                        Panadería artesanal
+                    </span>
+
+
+                    <h1>
+                        Dulce
+                        <span>Sabor</span>
+                    </h1>
+
+
+                    <p>
+                        Tradición, creatividad y una
+                        experiencia cálida en cada producto.
+                    </p>
+
+
+                    <p style="margin-top:10px">
+
+                        Recetas familiares que evocan
+                        el hogar, acompañadas de
+                        presentaciones modernas.
+
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            class="btn btn-primary"
+                            href="#menu"
+                        >
+                            Ver productos
+                        </a>
+
+
+                        <a
+                            class="btn btn-outline"
+                            href="#servicios"
+                        >
+                            Conocer servicios
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-art">
+
+                    <img
+                        src="Logo.p.jpg"
+                        alt="Logo Dulce Sabor"
+                    >
+
+
+                    <div class="badge">
+
+                        Calidad artesanal
+                        •
+                        Precios accesibles
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             NOSOTROS
+        ====================================== -->
+
+        <section
+            class="about"
+            id="nosotros"
+        >
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span class="tag">
+                        Nuestra esencia
+                    </span>
+
+
+                    <h2>
+                        Una panadería
+                        familiar y creativa
+                    </h2>
+
+
+                    <p>
+
+                        
+                        
+                        
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-card">
+
+                        <h3>
+                            ¿Qué nos caracteriza?
+                        </h3>
+
+
+                        <p>
+
+                            Dulce Sabor Panadería
+                            mantiene la esencia de lo
+                            artesanal en cada producto
+                            y combina tradición y
+                            creatividad.
+
+                        </p>
+
+
+                        <p>
+
+                            Las recetas familiares
+                            evocan el hogar, mientras
+                            que las presentaciones
+                            modernas buscan conectar
+                            con públicos actuales.
+
+                        </p>
+
+
+                        <p>
+
+                            La marca refleja pasión
+                            por la panadería,
+                            autenticidad y una forma
+                            cercana y acogedora
+                            de atender.
+
+                        </p>
+
+
+                        <div class="note">
+
+                            <strong>
+                                Información de origen:
+                            </strong>
+
+                            Dulce Sabor nació como una panadería familiar 
+                            en San Salvador, con el propósito de ofrecer productos
+                            artesanales que transmitan calidez y sabor casero 
+                            La tradición de hornear se combina con creatividad para dar a cada 
+                            cliente una experiencia dulce y cercana. 
+
+                            
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="visual">
+
+                        <img
+                            src="Glaseado.jpg"
+                            alt="Productos de Dulce Sabor"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ACTITUD / CARÁCTER / APTITUD
+        ====================================== -->
+
+        <section class="values">
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span
+                        class="tag"
+                        style="color:#ffd84a"
+                    >
+                        La marca
+                    </span>
+
+
+                    <h2>
+                        Actitud, carácter y aptitud
+                    </h2>
+
+
+                    <p>
+
+
+                        
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="value-grid">
+
+
+                    <article class="value-card">
+
+                        <div class="icon">
+                            
+                        </div>
+
+
+                        <h3>
+                            Actitud
+                        </h3>
+
+
+                        <p>
+
+                            Positiva, cercana y alegre.
+                            Busca transmitir confianza
+                            y satisfacción, manteniendo
+                            un servicio cálido y humano.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="value-card">
+
+                        <div class="icon">
+                            
+                        </div>
+
+
+                        <h3>
+                            Carácter
+                        </h3>
+
+
+                        <p>
+
+                            Familiar, acogedor y
+                            creativo.
+
+                            Mantiene la tradición,
+                            pero también se adapta
+                            a nuevas tendencias
+                            y necesidades.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="value-card">
+
+                        <div class="icon">
+                            
+                        </div>
+
+
+                        <h3>
+                            Aptitud
+                        </h3>
+
+
+                        <p>
+
+                            Capacidad para crear
+                            productos artesanales
+                            de calidad, innovar en
+                            sabores, mantener precios
+                            accesibles y presentar
+                            los productos de forma
+                            atractiva.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PRODUCTOS
+        ====================================== -->
+
+        <section
+            class="products"
+            id="productos"
+        >
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span class="tag">
+                        Productos destacados
+                    </span>
+
+
+                    <h2>
+                        Un vistazo al menú
+                    </h2>
+
+
+                    <p>
+
+                        Puedes elejir o consultar lo que te guste
+        
+                    
+
+                
+                        
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="product-grid">
+
+
+                    <!-- PRODUCTO 1 -->
+
+                    <article class="product-card">
+
+                        <img
+                            src="Chocolat.jpg"
+                            alt="Bebida de chocolate de Dulce Sabor"
+
+                        <img
+                    
+                            src="Menuu.jpg"
+                            alt="puedes consultar o ver lo que quieras comprar"
+                        
+
+
+                        <div class="product-body">
+
+                            <h3>
+                                Dulce Sabor a chocolate
+                            </h3>
+
+
+                            <p>
+
+                                Presentación promocional
+                                de una bebida de chocolate
+                                con crema y decoración
+                                de chocolate.
+
+                            </p>
+
+
+                            <span class="no-price">
+
+                                Precio:
+                                $2.50
+
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PRODUCTO 2 -->
+
+                    <article class="product-card">
+
+                        <img
+                            src="Glaseado.jpg"
+                            alt="Donas de chocolate y glaseado"
+                        >
+
+
+                        <div class="product-body">
+
+                            <h3>
+                                Chocolate o glaseado
+                            </h3>
+
+
+                            <p>
+
+                                Presentación de donas
+                                con cobertura de chocolate
+                                y glaseado, mostradas en
+                                el material promocional.
+
+                            
+
+
+                            </p>
+
+
+                            <span class="no-price">
+
+                                Precio:
+                                $3.00
+
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SERVICIOS
+        ====================================== -->
+
+        <section
+            class="services"
+            id="servicios"
+        >
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span class="tag">
+                        Servicios
+                    </span>
+
+
+                    <h2>
+                        También atendemos
+                        necesidades de empresas
+                    </h2>
+
+
+                    <p>
+
+                        
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-grid">
+
+
+                    <article class="service">
+
+                        <h3>
+                            Oficinas
+                        </h3>
+
+
+                        <p>
+
+                            Repostería artesanal
+                            para oficinas, con
+                            productos frescos
+                            y consistentes.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="service">
+
+                        <h3>
+                            Cafeterías
+                        </h3>
+
+
+                        <p>
+
+                            Oferta de repostería
+                            artesanal para cafeterías
+                            que buscan calidad
+                            y diferenciación.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="service">
+
+                        <h3>
+                            Eventos corporativos
+                        </h3>
+
+
+                        <p>
+
+                            Repostería artesanal
+                            para eventos corporativos
+                            y para acompañar a
+                            clientes o empleados.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MENÚ
+        ====================================== -->
+
+        <section
+            class="menu-section"
+            id="menu"
+        >
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span class="tag">
+                        Menú
+                    </span>
+                    <img 
+                    src="Menuu.jpg"
+
+
+                    <h2>
+
+                    </h2>
+
+
+                    <p>
+
+                
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="menu-box">
+
+
+                    <div class="menu-row">
+
+                        <div>
+
+                            <h3>
+                                Dulce Sabor a chocolate
+                            </h3>
+
+                            <small>
+                                
+                            </small>
+
+                        </div>
+
+
+                        <span>
+                            $3.00
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="menu-row">
+
+                        <div>
+
+                            <h3>
+                                Donas de chocolate
+                            </h3>
+
+                            <small>
+                                
+                            </small>
+
+                        </div>
+
+
+                        <span>
+                            $1.00
+                        
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="menu-row">
+
+                        <div>
+
+                            <h3>
+                                Donas glaseadas
+                            </h3>
+
+                            <small>
+                                
+                            </small>
+
+                        </div>
+
+
+                        <span>
+                            $2.00
+                        </span>
+
+                    </div>
+
+
+
+                    <p class="menu-note">
+
+                        
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ORIGEN
+        ====================================== -->
+
+        <section
+            class="origin"
+            id="origen"
+        >
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span
+                        class="tag"
+                        style="color:#ffd84a"
+                    >
+                        Nuestra historia
+                    </span>
+
+
+                    <h2>
+                        Origen de Dulce Sabor
+                    </h2>
+
+
+                    <p>
+
+                       
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="origin-box">
+
+                    <p>
+
+                        Queremos contar aquí
+                        el origen de nuestro
+                        nombre y cómo nació
+                        Dulce Sabor Panadería.
+
+                    </p>
+                      Dulce Sabor nació como una panadería 
+                      familiar en San Salvador, con el propósito de ofrecer 
+                      productos artesanales que transmitan calidez y sabor casero. 
+
+                    <div class="pending">
+
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTACTO
+        ====================================== -->
+
+        <section
+            class="contact"
+            id="contacto"
+        >
+
+            <div class="container">
+
+
+                <div class="contact-box">
+
+                    <h2>
+                        ¿Quieres conocer
+                        nuestros productos?
+                    </h2>
+
+
+                    <p>
+
+                        Consulta disponibilidad
+                        y precios de los productos
+                        de Dulce Sabor.
+                        <p>
+
+                        Dulce Sabor
+                        <p>
+
+                        <p>WhatsApp: +503 7122 0324
+                        <p>
+                        "traición que inspira, sabor que enamora"
+
+                    </p>
+
+
+                    <div
+                        class="buttons"
+                        style="justify-content:center"
+                    >
+
+                        <a
+                            class="btn btn-primary"
+                            href="#menu"
+                        >
+                            Consultar menú
+                        </a>
+
+
+                        <a
+                            class="btn btn-outline"
+                            href="#inicio"
+                        >
+                            Volver al inicio
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            ©
+            <span id="year"></span>
+
+            Dulce Sabor Panadería
+
+            •
+            Sitio web
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        /* Menú para celular */
+
+        const boton =
+            document.querySelector(".menu-btn");
+
+        const enlaces =
+            document.querySelector(".nav-links");
+
+
+        boton.addEventListener(
+            "click",
+            function () {
+
+                enlaces.classList.toggle("open");
+
+            }
+        );
+
+
+        /* Cerrar menú después de
+           seleccionar una sección */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (enlace) {
+
+                enlace.addEventListener(
+                    "click",
+                    function () {
+
+                        enlaces.classList.remove("open");
+
+                    }
+                );
+
+            });
+
+
+        /* Año automático */
+
+        document.getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+    </script>
+
+
+</body>
+
+</html>
